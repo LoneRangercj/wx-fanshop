@@ -1,0 +1,11 @@
+<view class="shopcar-bottom">
+  <view class="shopcar-check">
+    <checkbox class=""checked="{{allchecked}}" color="#f72a1a" bindtap="checkAll"></checkbox>
+    全选
+  </view>
+  <!--><view class="shopcar-num">已选{{number}}</view><-->
+  <view class="shopcar-submit">
+    <text>合计:<text class="shopcar-total">Ұ{{total}}</text></text>
+    <button class="shopcar-btn">结算</button>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+.shopcar-bottom {
+  position: fixed;
+  bottom: 0;
+  height: 110rpx;
+  width: 100%;
+  display: flex;
+  background-color: #ffffff;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2rpx solid #ccc;
+}
+
+.shopcar-check {
+  margin-left: 20rpx;
+}
+
+.shopcar-num{
+  margin-left: 20rpx;
+}
+
+.shopcar-submit {
+  min-width: 300rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopcar-total {
+  color: #f72a1a;
+}
+
+.shopcar-btn {
+  display: inline-block;
+  width: 180rpx;
+  height: 80rpx;
+  padding: 0rpx 30rpx;
+  background:linear-gradient(to right, #FF4400,#FF7850);
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  margin-right: 20rpx;
+  margin-left: 60rpx;
+  border-radius: 40rpx;
+}

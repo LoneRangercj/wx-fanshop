@@ -1,0 +1,20 @@
+<scroll-view class="scroll" scroll-y="true">
+  <view wx:for="{{addressList}}">
+<view class="product-name-wrap">
+  <view class="ui-list-item-info">收件人{{item.consignee}}
+    <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>手机号{{item.mobile}}
+  </view>
+  <view class="ui-list-item-address">
+    地址：{{item.address}}
+  </view>
+  <view class="ui-list-item-time">
+    <p>具体收获时间：{{item.transportDay}}</p>
+    <p class="ui-list-item-del" data-id="{{index}}" bindtap="delAddress">删除</p>
+  </view>
+  <view class="separate"></view>
+</view>
+</view>
+</scroll-view>
+<view class="add-address" bindtap="addAddress">
+	<text class="esofont eso-tianjia"></text>新增地址
+</view>

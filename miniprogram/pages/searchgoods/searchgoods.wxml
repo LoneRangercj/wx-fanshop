@@ -1,0 +1,71 @@
+<view class="top">
+  <c-commonbar>
+    <view slot="left" class="goodLeft" bindtap="backHome">
+      <text class="esofont eso-arrowLeft"></text>
+    </view>
+    <view slot="middle" class="goodInput">
+      <input placeholder="搜索你要的东西" placeholder-class="center" bindtap="inputFlagHandle" bindinput='inputEnter' confirm-type="search" value="{{inputWrite}}" bindconfirm="searchHandle"></input>
+    </view>
+    <view slot="right" class="goodSearch">
+      <button type="" bindtap="searchHandle">搜索</button>
+    </view>
+  </c-commonbar>
+  <view class="search-input" wx:if="{{flag}}" bindtap="cancelFlagHandle">
+    <block wx:for="{{inputSearch}}" wx:for-item="item" wx:key="index" >
+      <view class="searchTitle" bindtap="searchResultHandle" data-title="{{item}}">
+        {{item}}
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="history">
+  <view class="content">
+    <view class="history-top">
+      <view class="history-cord">历史搜索</view>
+      <view class="history-clear">
+        <text class="esofont eso-lajixiang" bindtap="deleteSearchHandle">
+        </text>
+      </view>
+      <view class="clear"></view>
+      <view class="history-historyTitle">
+        <block wx:for="{{historyTitle}}" wx:for-item="item" wx:key="index" :index="index">
+            <text class="item-title1" bindtap="searchInput" data-value="{{item}}">{{item}}</text>
+        </block>
+      </view>
+    </view>
+    <view class="history-center">
+      <view class="history-cord">搜索发现</view>
+      <view class="history-clear">
+        <text class="esofont {{openEye === true ? 'eso-zhengyan' : 'eso-biyan'}}" bindtap="closeEyeHandle">
+        </text>
+      </view>
+      <view class="clear"></view>
+      <view class="history-historyTitle" wx:if="{{openEye}}">
+        <block wx:for="{{searchFind}}" wx:for-item="item" wx:key="index" :index="index">
+            <text class="item-title2" bindtap="discoverSearchHandle" data-discover="{{item}}">{{item}}</text>
+        </block>
+      </view>
+      <view wx:else class="discover-title">
+        <text class="discover">
+          当前发现已隐藏
+        </text>
+      </view>
+    </view>
+    <view wx:if="{{searchList.length != 0}}">
+      <view class="searchResult">
+        搜索结果
+      </view>
+      <view class="history-bottom">
+        <view class="search-container">
+          <block wx:for="{{searchList}}" wx:for-item="item" wx:key="index">
+            <search-goodslist searchList="{{item}}"></search-goodslist>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="noSearchRecord">
+      <text class="history-title">数据还没搜索或搜索不到</text>
+    </view>
+  </view>
+</view>

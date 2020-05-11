@@ -1,0 +1,85 @@
+<!--miniprogram/pages/profile/profile.wxml-->
+<view class="profile-header">
+    <view class="avatar-url">
+        <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="nickName">
+        <open-data type="userNickName"></open-data>
+    </view>
+</view>
+<view class="nav">
+  <view class="nav-item">
+    <navigator class="content" url="" hover-class="none">
+      <text class="text1">我的订单</text>
+      <text class="text2">全部订单</text>
+      <i class="iconfont icon-xiangyou"></i>
+    </navigator>
+  </view>
+  <view class="nav-item nav-state">
+    <navigator class="content" url="" hover-class="none">
+      <view class="icon">
+        <i class="iconfont icon-daifukuan"></i>
+      </view>
+      <view class="icon">
+        <text>待付款</text>
+      </view>
+    </navigator>
+    <navigator class="content" url="" hover-class="none">
+      <view class="icon">
+        <i class="iconfont icon-daishouhuo"></i>
+      </view>
+      <view class="icon">
+        <text>待收货</text>
+      </view>
+    </navigator>
+     <navigator class="content" url="" hover-class="none">
+      <view class="icon">
+        <i class="iconfont icon-yiwanchengdingdan"></i>
+      </view>
+      <view class="icon">
+        <text>已完成</text>
+      </view>
+    </navigator>
+     <navigator class="content" url="" hover-class="none">
+      <view class="icon icon-special">
+        <i class="iconfont icon-icon-test"></i>
+      </view>
+      <view class="icon icon-special">
+        <text>售后/退款</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <navigator class="content" url="" hover-class="none">
+      <text class="text1">我的金币</text>
+       <text class="special1">0</text>
+      <i class="iconfont icon-xiangyou"></i>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <navigator url="/pages/collect/index">
+      <text class="text1">收藏的商品</text>
+      <text class="special2">{{collectNum}}</text>
+      <i class="iconfont icon-xiangyou"></i>
+    </navigator> 
+  </view>
+  <view class="nav-item">
+    <navigator class="content" url="../../pages/address/address" hover-class="none">
+      <text class="text1">我的地址</text>
+      <i class="iconfont icon-xiangyou"></i>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <navigator class="content" url="" hover-class="none">
+      <text class="text1">在线客服</text>
+      <text class="tele">4008210369</text>
+      <i class="iconfont icon-xiangyou"></i>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <navigator class="content" url="" hover-class="none">
+      <text class="text1">关于我们</text>
+      <i class="iconfont icon-xiangyou"></i>
+    </navigator>
+  </view>
+</view>

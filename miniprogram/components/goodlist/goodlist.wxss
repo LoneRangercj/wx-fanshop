@@ -1,0 +1,17 @@
+.goods_img{
+  width: 300rpx;
+  margin: 0 auto;
+  height: 300rpx;
+}
+.goods_text{
+  width: 100%;
+  background-color: #fff;
+}
+.left,.right{
+  display: flex;
+  justify-content: space-between;
+}
+
+.goods_nice span,.goods_price{
+  color: red;
+}

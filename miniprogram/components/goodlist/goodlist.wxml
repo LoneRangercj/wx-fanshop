@@ -1,0 +1,15 @@
+<view class="play-container" bind:tap="catchTapGood" data-title="{{goodlist.title}}" data-goodsid="{{goodlist.Id}}">
+  <image src="{{goodlist.img_list_url}}" class="goods_img"></image>
+  <view class="goods_title">{{goodlist.title}}</view>
+  <c-goodlist>
+    <view slot="left">
+      <view class="goods_price">￥{{goodlist.price}}</view>
+    </view>
+    <view slot="middle" class="goods_nice">
+      <view>已售<span>{{goodlist.nice}}</span>件</view>
+    </view>
+    <view slot="right">
+      <rich-text nodes="{{goodlist.mack}}" class="goods_mack"></rich-text>
+    </view>
+  </c-goodlist>
+</view>

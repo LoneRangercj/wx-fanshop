@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "分类",
+  "usingComponents": {
+    "c-goodlist": "/components/goodlist/goodlist"
+  },
+  "disableScroll": true
+}

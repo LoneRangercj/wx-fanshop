@@ -1,0 +1,10 @@
+<view class="empty-cart" hidden="{{cartList.length != 0}}">
+  <text>购物车空空如也</text>
+  <view bindtap="homeHandle">客官去看看首页吧!</view>
+</view>
+
+<view hidden="{{cartList.length == 0}}">
+  <cart goodsNumber="{{goodsNumber}}" allchecked="{{allchecked}}" cartList="{{cartList}}" bind:onReduce="onReduce" bind:onAdd = "onAdd" bind:onCheck="onCheck" ></cart>
+</view>
+
+<shopcar-bottom indexList="{{indexList}}" id="car-bottom" bind:checkAll="checkAll" bind:goodsTotal = "goodsTotal" ></shopcar-bottom>

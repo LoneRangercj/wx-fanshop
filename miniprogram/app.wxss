@@ -1,0 +1,4 @@
+/* 导入字体图标样式 */
+@import "./style/icon.wxss";
+@import "./style/icon-profile.wxss"
+@import "./style/icon-address.wxss"

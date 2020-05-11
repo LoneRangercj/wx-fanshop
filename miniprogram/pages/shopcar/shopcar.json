@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "cart":"/components/cart-list/cart",
+    "shopcar-bottom":"/components/shopcar-bottom/shopcar-bottom"
+  },
+  "disableScroll": true
+}

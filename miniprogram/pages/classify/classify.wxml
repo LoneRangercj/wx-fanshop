@@ -1,0 +1,22 @@
+<view class="flex_row">
+  <view class="nav_left" >
+    <view style="height:1500rpx;">
+      <block wx:for="{{newGoodList}}" wx:key="index">
+        <view class="nav_left_items {{curNav == index ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{index}}">
+              {{item.type_one}}        
+        </view>
+      </block>
+    </view>
+  </view> 
+  <view class="nav_right">
+    <scroll-view class="nav_right_list" scroll-y="true">
+      <view style="height:1200rpx;">
+        <block wx:for="{{newGoodList[curIndex].list}}" wx:key="index" wx:for-item="item">
+          <view>
+            <c-goodlist goodlist="{{item}}"></c-goodlist>
+          </view>
+       </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

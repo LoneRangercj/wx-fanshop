@@ -1,0 +1,44 @@
+.top{
+  width: 100%;
+}
+.center{
+    text-align: center;
+    color: #ccc;
+}
+.goodSearch{
+  width: 500rpx;
+  height: 60rpx;
+  background-color: #ECECEC;
+  margin: 0rpx auto 0rpx;
+}
+.nav-item{
+  width: 22%;
+  display: inline-block;
+  padding: 0rpx 10rpx;
+  border-radius: 15rpx;
+  text-align:center;
+}
+.nav-item-active{
+  color: #F72A1A;
+}
+.category-spacing{
+  display: flex;
+  height: 60rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  color: #777777;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.swiper {
+  width: 96%;
+  margin: 0 auto;
+}
+.swiper-item image{
+  width: 100%;
+  height: 100%;
+}
+.scroll-view{
+  white-space: nowrap;
+}

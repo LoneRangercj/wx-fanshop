@@ -1,0 +1,22 @@
+.empty-cart{
+  width: 100%;
+  height: 600rpx;
+  background-color: #fbfbfb;
+  text-align: center;
+  padding-top: 100rpx;
+}
+
+.empty-cart text{
+  font-size: 30rpx;
+  color: #ccc;
+}
+.empty-cart view{
+  width: 300rpx;
+  margin: 40rpx auto;
+  padding: 10rpx 0;
+  border: 1px solid #b1aaaa;
+  background-color: #c9c4c4;
+  color: #FF7850;
+  font-size: 30rpx; 
+  border-radius: 5rpx;
+}

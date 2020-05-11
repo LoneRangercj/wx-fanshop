@@ -1,0 +1,15 @@
+<view class="play-container" bind:tap="catchSearchHandle" data-title="{{searchList.title}}" data-goodsid="{{searchList.Id}}">
+  <image src="{{searchList.img_list_url}}" class="search_img"></image>
+  <view class="search_title">{{searchList.title}}</view>
+  <c-searchList>
+    <view slot="left">
+      <view class="search_price">￥{{searchList.price}}</view>
+    </view>
+    <view slot="middle" class="search_nice">
+      <view>已售<span>{{searchList.nice}}</span>件</view>
+    </view>
+    <view slot="right">
+      <rich-text nodes="{{searchList.mack}}" class="search_mack"></rich-text>
+    </view>
+  </c-searchList>
+</view>

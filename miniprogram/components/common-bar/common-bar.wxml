@@ -1,0 +1,8 @@
+<!--components/common-bar/common-bar.wxml-->
+<view class="commonbar">
+  <slot name="left" class="left">
+  </slot>
+  <slot name="middle" class="middle">
+  </slot>
+  <slot name="right" class="right"></slot>
+</view>

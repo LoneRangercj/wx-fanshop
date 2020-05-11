@@ -1,0 +1,17 @@
+.search_img{
+    width: 300rpx;
+    margin: 0 auto;
+    height: 300rpx;
+  }
+  .search_text{
+    width: 100%;
+    background-color: #fff;
+  }
+  .left,.right{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .search_nice span,.search_price{
+    color: red;
+  }

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-commonbar": "/components/common-bar/common-bar",
+    "c-goodlist": "/components/goodlist/goodlist"
+  }
+}

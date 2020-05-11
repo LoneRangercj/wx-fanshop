@@ -1,0 +1,172 @@
+.top {
+    padding-top: 20rpx;
+}
+c-commonbar {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+c-commonbar .goodLeft {
+    width: 12%;
+}
+c-commonbar .goodLeft .eso-arrowLeft {
+    font-size: 60rpx;
+}
+c-commonbar .goodInput {
+    width: 60%;
+}
+c-commonbar .goodInput input {
+    width: 100%;
+    height: 80rpx;
+    border: 1rpx solid #FF4400;
+    border-radius: 40rpx;
+    padding-left: 30rpx;
+}
+c-commonbar .goodSearch {
+    width: 28%;
+    height:70rpx;
+    margin-top: 6rpx;
+    line-height: 70rpx;
+}
+c-commonbar .goodSearch button{
+    width: 120rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    height:70rpx;
+    line-height: 70rpx;
+    border-radius: 35rpx;
+    margin-right: 26rpx;
+    background:linear-gradient(to right, #FF4400,#FF7850);
+}
+.search-input {
+    width: 100%;
+    margin: 0 auto;
+    height: 1000rpx;
+    position: absolute;
+    top: 110rpx;
+    left: 0;
+    z-index: 999;
+    background-color: #ffffff;
+}
+.search-input .searchTitle {
+    width: 96%;
+    margin: 0 auto;
+    height: 60rpx;
+    line-height: 60rpx;
+    border: 1rpx solid #ccc;
+    margin-top: 10rpx;
+    opacity: 0.6;
+}
+.search-input .searchTitle:nth-child(odd){
+    background:#029D97;
+}
+.search-input .searchTitle:nth-child(even){
+    background:#EB6100;
+}
+.search-input .searchTitle:hover {
+    background:#cccccc;
+}
+.history {
+    width: 100%;
+}
+.history .content {
+    width: 96%;
+    margin: 0 auto;
+}
+.history .content .history-top {
+    height: 200rpx;
+}
+.history .content .history-top .history-cord {
+    float: left;
+}
+.history .content .history-top .history-clear {
+    float: right;
+}
+.history .content .history-top .clear {
+    clear: both;
+}
+.history .content .history-top .history-historyTitle {
+    padding: 0 20rpx;
+    height: 200rpx;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 100rpx;
+    overflow-y: scroll;
+}
+.item-title1 {
+    width: 29%;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    font-size: 22rpx;
+    background-color: #cccccc;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.history .content .history-center {
+    height: 260rpx;
+    margin-top: 60rpx;
+}
+.history .content .history-center .history-cord {
+    float: left;
+}
+.history .content .history-center .history-clear {
+    float: right;
+}
+.history .content .history-center .clear {
+    clear: both;
+}
+.discover-title {
+    width: 96%;
+    margin: 0 auto;
+    height: 200rpx;
+    text-align: center;
+}
+.discover-title .discover {
+    display: inline-block;
+    width: 96%;
+    height: 160rpx;
+    line-height: 70rpx;
+    color: #cccccc;
+}
+.eso-biyan {
+    color: #cccccc;
+}
+.searchResult {
+    width: 96;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+}
+.history .content .history-center .history-historyTitle {
+    padding: 0 20rpx;
+    height: 200rpx;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 100rpx;
+    overflow-y: scroll;
+}
+.item-title2 {
+    width: 29%;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    font-size: 30rpx;
+    background-color: #cccccc;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+}
+.noSearchRecord {
+    width: 96%;
+    height: 400rpx;
+    margin: 30rpx auto;
+    background-color: #cccccc;
+    text-align: center;
+    line-height: 400rpx;
+}
+.noSearchRecord .history-title {
+    color: red;
+}

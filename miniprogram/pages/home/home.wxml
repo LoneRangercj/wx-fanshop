@@ -1,0 +1,36 @@
+<view class="top">
+  <c-commonbar>
+    <view slot="middle" class="goodSearch" bindtap="searchGoodsHandle">
+      <input placeholder="共有{{total}}件商品" placeholder-class="center"></input>
+    </view>
+  </c-commonbar>
+</view>
+
+<view class="category-spacing">
+  <scroll-view class="scroll-view" scroll-x="true">
+    <block wx:for="{{tarBar}}" wx:for-item="item" wx:key="index" :index="index">
+      <view bindtap="ClassifyHandle" data-index="{{index}}" data-item="{{item.name}}" class="nav-item {{ index==chooseIndex?'nav-item-active':'' }}">{{item.name}}</view>
+    </block>
+  </scroll-view>
+</view>
+
+<view class="swiper" >
+  <view class="swiper-item" >
+    <swiper autoplay="true" interval="2000" circular="true">
+      <block wx:for="{{swiperList}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <swiper-item>
+          <image src="{{item.fileurl}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+<scroll-view scroll-y="true">
+  <view class="goods-container">
+    <block wx:for="{{goodList}}" wx:for-item="item" wx:key="index">
+      <c-goodlist goodlist="{{item}}"></c-goodlist>
+    </block>
+  </view>
+</scroll-view>
+  

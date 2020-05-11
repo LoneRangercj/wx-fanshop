@@ -1,0 +1,26 @@
+<view>
+  <block data="{{goodsDetail}}">
+      <image src="{{goodsDetail.img_list_url}}" class="goods_img"></image>
+      <view class="goods_title">商品名称：{{goodsDetail.title}}</view>
+      <c-commonbar data="{{goodsDetail}}">
+        <view slot="left">
+            <view class="goods_price">价格：￥{{goodsDetail.price}}</view>
+        </view>
+        <view slot="middle" class="goods_nice">
+            <view>已售<span>{{goodsDetail.nice}}</span>件</view>
+        </view>
+        <view slot="right">
+            <rich-text nodes="{{goodsDetail.mack}}" class="goods_mack"></rich-text>
+        </view>
+      </c-commonbar>
+  </block>
+</view>
+
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <image bindtap="toCar" src="../../assets/icon/cart1.png" />  
+  <view class="line_nav"></view>
+   <image bindtap="addLike" src="{{isLike?'../../assets/icon/enshrine_select.png':'../../assets/icon/enshrine.png'}}" /> 
+  <button data-goodid="1"  class="button-green" bindtap="addCar" >加入购物车</button>
+  <button class="button-red"  formType="submit">立即购买</button>
+</view>

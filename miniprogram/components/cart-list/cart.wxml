@@ -1,0 +1,22 @@
+<view>
+  <view class="shopcar">购物车({{goodsNumber}})</view>
+  <checkbox-group bindchange="checkboxChange">
+    <block wx:for="{{cartList}}" wx:key="_id">
+      <view class="car-item">
+        <view class="car-check">
+          <checkbox value="{{index}}" color="#f72a1a" checked="{{allchecked}}"></checkbox>
+        </view>
+        <image src="{{item.img_url}}" class="car-img" bindtap="goDetail" data-Id="{{item.Id}}"></image>
+        <view class="car-detail">
+          <view class="car-title">{{item.title}}</view>
+          <view class="car-money">
+            <text class="car-price">￥{{item.price}}</text>
+            <button bindtap="onReduce" data-_id="{{item._id}}" class="reduce">-</button>
+            <text class="car-count">{{item.count}}</text>
+            <button bindtap="onAdd" data-_id="{{item._id}}" class="add">+</button>
+          </view>
+        </view>
+      </view>
+    </block>
+  </checkbox-group>
+</view>

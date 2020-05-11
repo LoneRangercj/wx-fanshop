@@ -43,12 +43,12 @@ Component({
           allchecked: false
         })
       }
-      console.log(number);
+      // console.log(number);
       this.triggerEvent('goodsTotal',{number});
     },
     checkAll(e) {
       let allchecked = !this.data.allchecked;
-      //console.log(allchecked);
+      // console.log(allchecked);
       this.setData({
         allchecked
       })

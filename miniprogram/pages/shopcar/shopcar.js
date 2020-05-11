@@ -98,7 +98,6 @@ Page({
       })
       this.selectComponent('#car-bottom').dataHandle();
     }else if(e == false){
-      // console.log(666);
     }else {
       let indexList = e.detail.indexList;
       this.setData({
@@ -110,6 +109,12 @@ Page({
   // 全选功能函数
   checkAll(e) {
     // console.log(e.detail.allchecked);
+    // console.log(this.data.indexList)
+    if(this.data.indexList.length != 0) {
+      this.setData({
+        indexList: []
+      })
+    }
     this.setData({
       allchecked: e.detail.allchecked
     })

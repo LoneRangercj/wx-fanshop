@@ -1,4 +1,5 @@
-const MAX_LIMIT = 20
+const MAX_LIMIT = 20;
+let flag = true;
 Page({
   /**
    * 页面的初始数据
@@ -12,6 +13,7 @@ Page({
     inputSearch:[],//搜索框底下的模糊查找
     goodList: [],//商品列表
     flag: false,//控制模糊搜索的开关
+    toTopValue: false//返回顶部开关，默认隐藏
   },
 
   /**
@@ -155,6 +157,35 @@ Page({
   discoverSearchHandle(e) {
     this.setData({
       inputWrite: e.target.dataset.discover
+    })
+  },
+  //检测滚动事件
+  onPageScroll:function(e){
+    let scrollTop = e.scrollTop
+    let toTopValue = scrollTop > 500 ? true : false
+    if(toTopValue && flag){
+      this.setData({
+        toTopValue: true
+      },()=>{
+        flag = false;
+      })
+    }else if(!toTopValue && !flag){
+      this.setData({
+        toTopValue:false
+      },()=>{
+        flag = true;
+      })
+    }
+  },
+  //返回顶部
+  onToTop(){
+    wx.pageScrollTo({
+      scrollTop: 0,
+    })
+    this.setData({
+      toTopValue:false
+    },()=>{
+      flag = true
     })
   },
   /**

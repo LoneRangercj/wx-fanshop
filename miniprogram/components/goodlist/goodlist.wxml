@@ -1,4 +1,4 @@
-<view class="play-container" bind:tap="catchTapGood" data-title="{{goodlist.title}}" data-goodsid="{{goodlist.Id}}">
+<view class="play-container" bind:tap="catchTapGood" data-goodsid="{{goodlist.Id}}">
   <image src="{{goodlist.img_list_url}}" class="goods_img"></image>
   <view class="goods_title">{{goodlist.title}}</view>
   <c-goodlist>

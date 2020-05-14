@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-goodlist": "/components/goodlist/goodlist"
+  },
+  "enablePullDownRefresh":true
+}

@@ -6,7 +6,7 @@ Page({
   /*生命周期函数--监听页面加载*/
   onLoad: function (options) {
     var arr = wx.getStorageSync('addressList') || [];
-    console.info("缓存数据：" + arr);
+    // console.info("缓存数据：" + arr);
     // 更新数据  
     this.setData({
 	    addressList: arr

@@ -1,0 +1,3 @@
+<view class="toTop {{selected ? 'active' : ''}}" bindtap="onToTop" wx:if="{{isShow}}">
+    <text class="esofont eso-huojian"></text>
+</view>

@@ -1,0 +1,47 @@
+@import "../../style/icon-address.wxss";
+.toTop {
+  position: fixed;
+  bottom: 120rpx;
+  right: 0rpx;
+  background-color: rgba(204, 204, 204, 0.493);
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  animation: transitionRight 1s linear forwards;
+}
+.active {
+    opacity: 0;
+    color: aqua;
+    animation: emit 1s linear;
+}
+@keyframes emit {
+    from { 
+        transform: translateY(-100px);
+        opacity: 0.2;
+        background: red; 
+    }
+    50% { 
+        transform: translateY(-300px);
+        background: orange;
+        opacity: 0.8;
+    }
+    to { 
+        transform: translateY(-600px);
+        opacity: 0;
+        background: yellowgreen; 
+    }
+}
+
+@keyframes transitionRight {
+    from { 
+        transform: translateX(-20rpx);
+    }
+    50% { 
+        transform: translateX(-40rpx);
+    }
+    to { 
+        transform: translateX(-50rpx);
+    }
+}

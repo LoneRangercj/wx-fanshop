@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    collectNum: 0,
+    collectDataList: [],//收藏商品的列表
   },
 
   /**
@@ -27,23 +27,34 @@ Page({
     }).then(res=>{
       wx.hideLoading();
       this.setData({
-        collectNum: res.result.data.length
+        collectDataList: res.result.data
       })
     }).catch(err=>{
       console.log(err)
     })
   },
-  // 跳转到收藏商品的页面
-  enterCollect(e) {
+  // 跳转到详情页
+  catchTapGood: function (e) {     
+    var goodsId = e.currentTarget.dataset.goodsid; 
+    //跳转商品详情
+    wx.showLoading({
+      title: '加载中...',
+    });
     wx.navigateTo({
-      url: "../collect/collect",
-    })
+      url: `/pages/goodsdetail/goodsdetail?goodsId=${goodsId}`,
+      success: (result)=>{
+        wx.hideLoading();
+      },
+      fail: ()=>{
+        wx.hideLoading();
+      },
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
+  onReady: function (options) {
+    
   },
 
   /**

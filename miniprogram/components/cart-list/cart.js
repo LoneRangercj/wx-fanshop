@@ -10,6 +10,15 @@ Component({
       type: Number
     }
   },
+  pageLifetimes: {
+    show: function() {
+      // 页面被展示
+      this.setData({
+        allchecked: false,
+        goodsNumber:0
+      })
+    },
+  },
   methods: {
     checkboxChange(e) {
       let indexList = e.detail.value;
@@ -26,7 +35,7 @@ Component({
     },
     goDetail(e) {
       let id = e.currentTarget.dataset.id;
-      console.log(id);
+      // console.log(id);
       wx.navigateTo({
         url: `/pages/goodsdetail/goodsdetail?goodsId=${id}`
       })

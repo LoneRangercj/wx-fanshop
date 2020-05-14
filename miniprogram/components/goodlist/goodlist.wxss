@@ -1,3 +1,8 @@
+.play-container {
+  width: 96%;
+  margin: 0 auto;
+  text-align: center;
+}
 .goods_img{
   width: 300rpx;
   margin: 0 auto;

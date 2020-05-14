@@ -45,7 +45,7 @@ Page({
       }
     }).then(res=>{
        wx.hideLoading();
-       console.log(res);
+      //  console.log(res);
        this.setData({
          goodList: this.data.goodList.concat(res.result.data)
        })
@@ -73,7 +73,7 @@ Page({
     wx.cloud.callFunction({
       name:"swiper",
     }).then(res=>{
-      console.log(res);
+      // console.log(res);
       this.setData({
         swiperList: res.result.data
       })

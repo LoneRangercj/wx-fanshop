@@ -15,10 +15,14 @@ Page({
    */
   onLoad: function (options) {
     // 从缓存中拿到数据
+    console.log(1111);
+    
     this.getCardetailGoods()
   },
   getCardetailGoods() {
     list = wx.getStorageSync('car');
+    // console.log(list);
+    
     this.setData({
       cartList: list
     })
@@ -167,20 +171,22 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log(222222);
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {   
-     this.getCardetailGoods()
+    // console.log(33333);
+    this.getCardetailGoods();
+    
   },
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log(1)
+    
   },
 
   /**

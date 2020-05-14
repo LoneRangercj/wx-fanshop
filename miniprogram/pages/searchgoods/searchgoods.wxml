@@ -69,3 +69,5 @@
     </view>
   </view>
 </view>
+
+<c-toTop toTopValue="{{toTopValue}}" bind:onToTop="onToTop"></c-toTop>

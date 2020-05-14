@@ -7,4 +7,4 @@
   <cart goodsNumber="{{goodsNumber}}" allchecked="{{allchecked}}" cartList="{{cartList}}" bind:onReduce="onReduce" bind:onAdd = "onAdd" bind:onCheck="onCheck" ></cart>
 </view>
 
-<shopcar-bottom indexList="{{indexList}}" id="car-bottom" bind:checkAll="checkAll" bind:goodsTotal = "goodsTotal" ></shopcar-bottom>
+<shopcar-bottom cartList="{{cartList}}" indexList="{{indexList}}" id="car-bottom" bind:checkAll="checkAll" bind:goodsTotal = "goodsTotal" ></shopcar-bottom>

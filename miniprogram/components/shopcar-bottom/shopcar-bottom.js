@@ -5,9 +5,21 @@ Component({
   properties: {
     indexList: {
       type:Array
+    },
+    cartList: {
+      type:Array
     }
   },
-
+  pageLifetimes: {
+    show: function() {
+      // 页面被展示
+      this.setData({
+        allchecked: false,
+        total: 0,
+        number: 0
+      })
+    },
+  },
   /**
    * 组件的初始数据
    */
@@ -16,7 +28,6 @@ Component({
     number:0,
     allchecked: false, //全部选中
   },
-
   /**
    * 组件的方法列表
    */
@@ -47,18 +58,26 @@ Component({
       this.triggerEvent('goodsTotal',{number});
     },
     checkAll(e) {
-      let allchecked = !this.data.allchecked;
-      // console.log(allchecked);
-      this.setData({
-        allchecked
-      })
-      if(allchecked === false) {
-        // console.log(111111);
-        this.setData({
-          total: 0
-        })
-      }
-      this.triggerEvent("checkAll",{allchecked})
+        console.log(this.properties.cartList.length);
+        if(this.properties.cartList.length == 0) {
+          this.setData({
+            allchecked: false
+          })
+        }else {
+          let allchecked = !this.data.allchecked;
+          // console.log(allchecked);
+          this.setData({
+            allchecked
+          })
+          if(allchecked === false) {
+            // console.log(111111);
+            this.setData({
+              total: 0
+            })
+          }
+          this.triggerEvent("checkAll",{allchecked})
+        }
     }
-  }
+  },
+
 })

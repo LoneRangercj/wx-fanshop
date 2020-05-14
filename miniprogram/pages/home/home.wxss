@@ -19,7 +19,7 @@
   text-align:center;
 }
 .nav-item-active{
-  color: #F72A1A;
+  color: #FE5D26;
 }
 .category-spacing{
   display: flex;
@@ -30,6 +30,12 @@
   color: #777777;
   margin-top: 20rpx;
   margin-bottom: 20rpx;
+}
+scroll-view ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
 }
 .swiper {
   width: 96%;

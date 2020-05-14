@@ -1,0 +1,24 @@
+<view class="collect">
+    <view class="collect-title">我的藏品</view>
+    <view class="play-container">
+        <block wx:for="{{collectDataList}}" wx:for-item="item" wx:key="index">
+            <image src="{{item.img_url}}" class="goods_img" bind:tap="catchTapGood" data-goodsid="{{item.Id}}"></image>
+            <view class="goods_title">{{item.title}}</view>
+            <c-commonbar>
+                <view slot="left">
+                    <view class="goods_price">￥{{item.price}}</view>
+                </view>
+                <view slot="middle" class="goods_nice">
+                    <view>
+                        已售
+                        <span>{{item.nice}}</span>
+                        件
+                    </view>
+                </view>
+                <view slot="right">
+                    <rich-text nodes="{{item.mack}}" class="goods_mack"></rich-text>
+                </view>
+            </c-commonbar>
+        </block>
+    </view>
+</view>

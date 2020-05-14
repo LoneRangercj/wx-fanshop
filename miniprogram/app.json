@@ -1,13 +1,15 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/classify/classify",
+    "pages/select/select",
     "pages/shopcar/shopcar",
     "pages/profile/profile",
     "pages/goodsdetail/goodsdetail",
     "pages/address/address",
     "pages/addAddress/addAddress",
-    "pages/searchgoods/searchgoods"
+    "pages/searchgoods/searchgoods",
+    "pages/classify/classify",
+    "pages/collect/collect"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -30,7 +32,7 @@
         "selectedIconPath": "/assets/icon/selecthome.png"
       },
       {
-        "pagePath": "pages/classify/classify",
+        "pagePath": "pages/select/select",
         "text": "分类",
         "iconPath": "/assets/icon/market.png",
         "selectedIconPath": "/assets/icon/selectmarket.png"

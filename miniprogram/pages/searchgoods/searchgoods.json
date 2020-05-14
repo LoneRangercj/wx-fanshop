@@ -2,6 +2,7 @@
   "navigationBarTitleText": "搜索列表",
   "usingComponents": {
     "c-commonbar": "/components/common-bar/common-bar",
-    "search-goodslist": "/components/searchlist/searchlist"
+    "search-goodslist": "/components/searchlist/searchlist",
+    "c-toTop":"/components/backTop/backTop"
   }
 }

@@ -1,8 +1,13 @@
+.play-container {
+  width: 96%;
+  margin: 0 auto;
+  text-align: center;
+}
 .search_img{
-    width: 300rpx;
-    margin: 0 auto;
-    height: 300rpx;
-  }
+  width: 300rpx;
+  margin: 0 auto;
+  height: 300rpx;
+}
   .search_text{
     width: 100%;
     background-color: #fff;

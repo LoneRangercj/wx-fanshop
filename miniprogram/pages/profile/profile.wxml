@@ -1,4 +1,3 @@
-<!--miniprogram/pages/profile/profile.wxml-->
 <view class="profile-header">
     <view class="avatar-url">
         <open-data type="userAvatarUrl"></open-data>
@@ -56,15 +55,15 @@
       <i class="iconfont icon-xiangyou"></i>
     </navigator>
   </view>
-  <view class="nav-item">
-    <navigator url="/pages/collect/index">
+  <view class="nav-item" bindtap="enterCollect">
+    <view>
       <text class="text1">收藏的商品</text>
       <text class="special2">{{collectNum}}</text>
       <i class="iconfont icon-xiangyou"></i>
-    </navigator> 
+    </view> 
   </view>
   <view class="nav-item">
-    <navigator class="content" url="../../pages/address/address" hover-class="none">
+    <navigator class="content" url="/pages/address/address" hover-class="none">
       <text class="text1">我的地址</text>
       <i class="iconfont icon-xiangyou"></i>
     </navigator>
@@ -72,7 +71,7 @@
   <view class="nav-item">
     <navigator class="content" url="" hover-class="none">
       <text class="text1">在线客服</text>
-      <text class="tele">4008210369</text>
+      <text class="tele">110</text>
       <i class="iconfont icon-xiangyou"></i>
     </navigator>
   </view>

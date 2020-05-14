@@ -6,7 +6,8 @@ Page({
     goodList:[], 
     newGoodList:[],
     curNav: 0,    
-    curIndex: 0
+    curIndex: 0,
+
   },
   //事件处理函数  
   switchRightTab: function (e) {
@@ -15,6 +16,8 @@ Page({
     
     let id = e.target.dataset.id,
       index = parseInt(e.target.dataset.index);
+      console.log(index);
+      
     // 把点击到的某一项，设为当前index  
     this.setData({
       curNav: id,
@@ -38,18 +41,18 @@ Page({
       name: "classify",
     }).then((res) => {
       console.log(res);
-      this.setData({
-        goodList: res.result.RECORDS
-      },()=>{
-        this.onDataHandle()
-      })
+      // this.setData({
+      //   goodList: res.result.RECORDS
+      // },()=>{
+        this.onDataHandle(res.result.RECORDS)
+      // })
       wx.hideLoading();
     })
   },
   // 对拿到的数据处理
-  onDataHandle() {
+  onDataHandle(res) {
     let list = [];
-    this.data.goodList.forEach((item, index) => {
+    res.forEach((item, index) => {
       var flag = true;
       list.forEach(element => {
         if (element.type_one == item.type_one) {
@@ -66,6 +69,51 @@ Page({
     });
     this.setData({
       newGoodList:list
+    })
+  },
+  //分类
+  ClassifyHandle(e){
+    let { index, item } = e.currentTarget.dataset;
+    console.log(index,item);
+    
+    this.setData({
+      chooseIndex:index
+    })
+    wx.showLoading({
+      title: `加载${item}中`,
+    })
+    wx.cloud.callFunction({
+      name:'goods',
+      data:{
+        $url:'goodListByType',
+        item
+      }
+    }).then(res=>{
+      wx.hideLoading();
+      // console.log(res.result.data);
+      this.ondataHandle(res.result.data)
+    })
+  },
+  ondataHandle(res) {
+    console.log(res);
+    let list = [];
+    res.forEach((item, index) => {
+      var flag = true;
+      list.forEach(element => {
+        if (element.type_two == item.type_two) {
+          element.list.push(item);
+          flag = false;
+        }
+      });
+      if (flag) {
+        list.push({
+          type_two: item.type_two,
+          list: []
+        });
+      }
+    });
+    this.setData({
+      goodList:list
     })
   },
   /**

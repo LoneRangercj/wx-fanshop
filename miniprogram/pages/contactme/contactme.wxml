@@ -1,0 +1,10 @@
+<view class="contact">
+  <view class="contactContent">
+    <view class="content">
+        <view class="title">联系我们</view>
+        <view class="mobilephone">手机号:17826616696</view>
+        <view class="email">邮箱:1975778272@qq.com</view>
+        <view class="weixin">微信号:jrzzcj</view>
+    </view>
+  </view>
+</view>

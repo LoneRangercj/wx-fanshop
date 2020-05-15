@@ -1,0 +1,29 @@
+<view class="order_manage">
+    <view class="address_choose">
+        <view class="select_address">选择发货的地址</view>
+        <view class="address_detail">
+            展示地址信息
+        </view>
+    </view>
+    <view class="good-title">购买的商品</view>
+    <block wx:for="{{orderlist}}" wx:key="index">
+        <block wx:for="{{item}}" wx:for-item="itemlist" wx:key="index">
+            <view class="order_good">
+                <image src="{{itemlist.img_url}}" class="pay-img"></image>
+                <view class="order_detail">
+                    <view class="pay-title">{{itemlist.title}}</view>
+                    <view class="pay-money">
+                        <text class="car-price">￥{{itemlist.price}}</text>
+                        <text class="car-count">x{{itemlist.count}}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </block>
+    <view class="order_message">
+        <view class="order_position">
+            <text>共{{num}}件,合计:<text class="shopcar-total">Ұ{{total}}</text></text>
+            <button class="shopcar-btn" bindtap="payGood">结算</button>
+        </view>
+    </view>
+</view>

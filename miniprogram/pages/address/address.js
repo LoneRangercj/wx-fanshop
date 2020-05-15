@@ -1,3 +1,4 @@
+let db = wx.cloud.database();
 Page({
   /**页面的初始数据 */
   	data: {
@@ -5,17 +6,33 @@ Page({
   },
   /*生命周期函数--监听页面加载*/
   onLoad: function (options) {
-    var arr = wx.getStorageSync('addressList') || [];
-    // console.info("缓存数据：" + arr);
-    // 更新数据  
-    this.setData({
-	    addressList: arr
-    });
+    this.addressListHandle();
   },
-  /**生命周期函数--监听页面显示 */
-	  onShow: function () {
-    this.onLoad();
+  // 处理获取地址数据
+  addressListHandle() {
+    wx.showLoading({
+      title: '加载中...',
+    })
+    wx.cloud.callFunction({
+      name: 'address',
+      data:{
+        $url:"searchAddress",
+      }
+    }).then(res=>{
+      wx.hideLoading();
+      // console.log(res);
+      this.setData({
+        addressList: res.result.data
+      })
+    }).catch(err=>{
+      console.log(err)
+    })
   },
+  /**监听页面显示 */
+	onShow: function () {
+    this.addressListHandle();
+  },
+  // 添加地址
   addAddress:function(){
     wx.showLoading({
       title: '加载中...',
@@ -30,20 +47,28 @@ Page({
       },
     });
   },
-  /* 删除item */
+  /* 删除地址 */
   delAddress: function (e) {
-    this.data.addressList.splice(e.target.id.substring(3), 1);
-    // 更新data数据对象  
-    if (this.data.addressList.length > 0) {
-      this.setData({
-        addressList: this.data.addressList
+    console.log(e.target.dataset.consignee);
+    var that = this;
+    var consignee = e.target.dataset.consignee;
+    wx.cloud.callFunction({
+      name: "address",
+      data: {
+        "$url": "addressDetail",
+        "consignee": consignee
+      }
+    }).then(res => {
+      console.log(res.result.data[0]._id);
+      var id = res.result.data[0]._id;
+      db.collection('address').doc(id).remove({
+        success:function(res){
+          wx.showToast({
+            title: '删除成功'
+          })
+          that.addressListHandle();
+        }
       })
-      wx.setStorageSync('addressList', this.data.addressList);
-    } else {
-      this.setData({
-        addressList: this.data.addressList
-      })
-      wx.setStorageSync('addressList', []);
-    }
+    })
   }
 })

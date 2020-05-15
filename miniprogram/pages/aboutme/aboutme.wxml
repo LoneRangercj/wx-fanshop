@@ -1,0 +1,9 @@
+<view class="about">
+  <view class="aboutContent">
+    <view class="content">
+        <view class="title">关于我们</view>
+        <view class="introduce1">这是一个练习的小程序，需要各位多多提携！</view>
+        <view class="introduce2">可以跟着我们的一起遨游在小程序的海洋吧！</view>
+    </view>
+  </view>
+</view>

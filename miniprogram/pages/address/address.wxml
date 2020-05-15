@@ -1,15 +1,15 @@
 <scroll-view class="scroll" scroll-y="true">
-  <view wx:for="{{addressList}}">
+  <view wx:for="{{addressList}}" wx:key="index">
     <view class="product-name-wrap">
       <view class="ui-list-item-info">
-        收件人{{item.consignee}}
+        收件人:{{item.consignee}}
         <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
-        手机号{{item.mobile}}
+        手机号:{{item.mobile}}
       </view>
-      <view class="ui-list-item-address">地址：{{item.address}}</view>
+      <view class="ui-list-item-address">地址:{{item.address}}</view>
       <view class="ui-list-item-time">
-        <p>具体收获时间：{{item.transportDay}}</p>
-        <p class="ui-list-item-del" data-id="{{index}}" bindtap="delAddress">删除</p>
+        <p>收获时间:{{item.transportDay}}</p>
+        <p class="ui-list-item-del" data-consignee="{{item.consignee}}" bindtap="delAddress">删除</p>
       </view>
       <view class="separate"></view>
     </view>

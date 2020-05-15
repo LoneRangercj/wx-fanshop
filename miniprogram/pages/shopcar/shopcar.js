@@ -1,4 +1,5 @@
 var list = [];
+let db = wx.cloud.database();
 Page({
   /**
    * 页面的初始数据
@@ -15,7 +16,7 @@ Page({
    */
   onLoad: function (options) {
     // 从缓存中拿到数据
-    console.log(1111);
+    // console.log(1111);
     
     this.getCardetailGoods()
   },
@@ -65,7 +66,6 @@ Page({
         })
       }
     })
-
     this.selectComponent('#car-bottom').dataHandle();
   },
   // 递增商品数量
@@ -167,11 +167,55 @@ Page({
       flag =  true
     })
   },
+  // 跳转到支付功能界面
+  payGood(e) {
+    var num = e.detail.num;
+    var total = e.detail.total;
+    var _idlist = [];
+    // console.log(total);
+    var list = wx.getStorageSync('car');
+    // console.log(list);
+    this.data.indexList.forEach((item,index,arr)=>{
+      _idlist.push(list[item]._id);
+      db.collection('order').add({
+        data: {
+          ...list[item]
+        }
+      })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(console.error)
+    })
+    // console.log(_idlist);
+    if(num != 0){
+      wx.showLoading({
+        title: '进入商品支付'
+      })
+      // console.log(_idlist);
+      var idlist = JSON.stringify(_idlist);
+      wx.navigateTo({
+        url: '/pages/pay/pay?idlist=' + idlist,
+        success: ()=>{
+          wx.hideLoading();
+        },
+        fail: ()=>{
+          wx.hideLoading();
+        },
+      })   
+    }else {
+      wx.showToast({
+        title: '没有选择任何商品',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log(222222);
+    // console.log(222222);
   },
 
   /**

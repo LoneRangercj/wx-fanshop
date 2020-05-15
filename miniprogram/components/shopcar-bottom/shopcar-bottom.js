@@ -58,25 +58,31 @@ Component({
       this.triggerEvent('goodsTotal',{number});
     },
     checkAll(e) {
-        console.log(this.properties.cartList.length);
-        if(this.properties.cartList.length == 0) {
+      console.log(this.properties.cartList.length);
+      if(this.properties.cartList.length == 0) {
+        this.setData({
+          allchecked: false
+        })
+      }else {
+        let allchecked = !this.data.allchecked;
+        // console.log(allchecked);
+        this.setData({
+          allchecked
+        })
+        if(allchecked === false) {
+          // console.log(111111);
           this.setData({
-            allchecked: false
+            total: 0
           })
-        }else {
-          let allchecked = !this.data.allchecked;
-          // console.log(allchecked);
-          this.setData({
-            allchecked
-          })
-          if(allchecked === false) {
-            // console.log(111111);
-            this.setData({
-              total: 0
-            })
-          }
-          this.triggerEvent("checkAll",{allchecked})
         }
+        this.triggerEvent("checkAll",{allchecked})
+      }
+    },
+    // 付款函数
+    payGood(e) {
+      let num = this.data.number;
+      let total = this.data.total;
+      this.triggerEvent("payGood",{num,total})
     }
   },
 

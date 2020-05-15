@@ -7,8 +7,12 @@
   line-height: 3.5rem;	
 }
 .weui-cells:after{
-  bottom:0;border-bottom:1rpx solid white	
+  bottom:0;
+  border-bottom:1rpx solid white	
 }
 .weui-btn{
   width: 80%;
+}
+.weui-cell_select {
+  padding: 32rpx;
 }

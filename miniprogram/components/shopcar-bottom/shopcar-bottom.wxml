@@ -6,6 +6,6 @@
   <!--><view class="shopcar-num">已选{{number}}</view><-->
   <view class="shopcar-submit">
     <text>合计:<text class="shopcar-total">Ұ{{total}}</text></text>
-    <button class="shopcar-btn">结算</button>
+    <button class="shopcar-btn" bindtap="payGood">结算</button>
   </view>
 </view>

@@ -9,7 +9,16 @@
     "pages/addAddress/addAddress",
     "pages/searchgoods/searchgoods",
     "pages/classify/classify",
-    "pages/collect/collect"
+    "pages/collect/collect",
+    "pages/aboutme/aboutme",
+    "pages/contactme/contactme",
+    "pages/order/order",
+    "pages/obligation/obligation",
+    "pages/receive/receive",
+    "pages/finish/finish",
+    "pages/drawback/drawback",
+    "pages/money/money",
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

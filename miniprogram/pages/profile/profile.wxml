@@ -8,14 +8,13 @@
 </view>
 <view class="nav">
   <view class="nav-item">
-    <navigator class="content" url="" hover-class="none">
+    <navigator class="content" url="/pages/order/order" hover-class="none">
       <text class="text1">我的订单</text>
-      <text class="text2">全部订单</text>
       <i class="iconfont icon-xiangyou"></i>
     </navigator>
   </view>
   <view class="nav-item nav-state">
-    <navigator class="content" url="" hover-class="none">
+    <navigator class="content" url="/pages/obligation/obligation" hover-class="none">
       <view class="icon">
         <i class="iconfont icon-daifukuan"></i>
       </view>
@@ -23,7 +22,7 @@
         <text>待付款</text>
       </view>
     </navigator>
-    <navigator class="content" url="" hover-class="none">
+    <navigator class="content" url="/pages/receive/receive" hover-class="none">
       <view class="icon">
         <i class="iconfont icon-daishouhuo"></i>
       </view>
@@ -31,7 +30,7 @@
         <text>待收货</text>
       </view>
     </navigator>
-     <navigator class="content" url="" hover-class="none">
+     <navigator class="content" url="/pages/finish/finish" hover-class="none">
       <view class="icon">
         <i class="iconfont icon-yiwanchengdingdan"></i>
       </view>
@@ -39,7 +38,7 @@
         <text>已完成</text>
       </view>
     </navigator>
-     <navigator class="content" url="" hover-class="none">
+     <navigator class="content" url="/pages/drawback/drawback" hover-class="none">
       <view class="icon icon-special">
         <i class="iconfont icon-icon-test"></i>
       </view>
@@ -49,7 +48,7 @@
     </navigator>
   </view>
   <view class="nav-item">
-    <navigator class="content" url="" hover-class="none">
+    <navigator class="content" url="/pages/money/money" hover-class="none">
       <text class="text1">我的金币</text>
        <text class="special1">0</text>
       <i class="iconfont icon-xiangyou"></i>
@@ -69,14 +68,14 @@
     </navigator>
   </view>
   <view class="nav-item">
-    <navigator class="content" url="" hover-class="none">
-      <text class="text1">在线客服</text>
-      <text class="tele">110</text>
+    <navigator class="content" url="/pages/contactme/contactme" hover-class="none">
+      <text class="text1">联系我们</text>
+      <text class="tele"></text>
       <i class="iconfont icon-xiangyou"></i>
     </navigator>
   </view>
   <view class="nav-item">
-    <navigator class="content" url="" hover-class="none">
+    <navigator class="content" url="/pages/aboutme/aboutme" hover-class="none">
       <text class="text1">关于我们</text>
       <i class="iconfont icon-xiangyou"></i>
     </navigator>

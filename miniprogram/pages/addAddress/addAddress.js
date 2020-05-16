@@ -1,3 +1,4 @@
+let db = wx.cloud.database();
 var area = require('../../utils/area.js');
 var areaInfo = []; //所有省市区县数据
 var provinces = []; //省
@@ -139,7 +140,7 @@ Page({
   },
   bindCityNameChange: function(e) {
     var that = this;
-    console.log('picker city 发生选择改变，携带值为', e.detail.value);
+    // console.log('picker city 发生选择改变，携带值为', e.detail.value);
     var val = e.detail.value
     that.getCountyInfo(value[0], val); //获取区县数据
     value = [value[0], val, 0];
@@ -165,16 +166,28 @@ Page({
     var countyName = e.detail.value.countyName;
     var address = e.detail.value.address;
     // console.log(transportDay + "," + provinceName + "," + cityName + "," + countyName + "," + address);
-    var arr = wx.getStorageSync('addressList') || [];
-    // console.log("arr,{}", arr);
-    addressList = {
-      consignee: consignee,
-      mobile: mobile,
-      address: provinceName + cityName + countyName+address,
-      transportDay: transportDay
-    }
-    arr.push(addressList);
-    wx.setStorageSync('addressList', arr);
+    wx.showToast({
+      title: '地址上传成功'
+    })
+    db.collection('address').add({
+      data: {
+        consignee,mobile,transportDay,address: provinceName + cityName + countyName+address,
+      }
+    })
+    .then(res => {
+      // console.log(res)
+    })
+    .catch(console.error)
+    // var arr = wx.getStorageSync('addressList') || [];
+    // // console.log("arr,{}", arr);
+    // addressList = {
+    //   consignee: consignee,
+    //   mobile: mobile,
+    //   address: provinceName + cityName + countyName+address,
+    //   transportDay: transportDay
+    // }
+    // arr.push(addressList);
+    // wx.setStorageSync('addressList', arr);
     wx.navigateBack({
     })
   }

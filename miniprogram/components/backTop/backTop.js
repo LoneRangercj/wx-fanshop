@@ -27,7 +27,7 @@ Component({
           selected: false
         })
         _that.triggerEvent('onToTop');
-      },2000)
+      },500)
     }
   }
 })

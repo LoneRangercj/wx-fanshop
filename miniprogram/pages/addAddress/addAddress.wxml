@@ -5,7 +5,7 @@
         <view class="weui-label">收货人</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" name="consignee" placeholder="请输入收货人真实姓名" />
+        <input class="weui-input" name="consignee" placeholder="请输入收货人姓名" />
       </view>
     </view>
     <view class="weui-cell weui-cell_input">
@@ -68,7 +68,7 @@
         <view class="weui-label">详细地址</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" name="address" placeholder="请输入收货人详细地址" />
+        <input class="weui-input" name="address" placeholder="请输入收货的详细地址" />
       </view>
     </view>
   </view>

@@ -9,12 +9,12 @@
   line-height: 100rpx;
   border-radius: 50%;
   text-align: center;
-  animation: transitionRight 1s linear forwards;
+  /* animation: transitionRight .5s linear forwards; */
 }
 .active {
     opacity: 0;
     color: aqua;
-    animation: emit 1s linear;
+    animation: emit .5s linear;
 }
 @keyframes emit {
     from { 
@@ -34,7 +34,7 @@
     }
 }
 
-@keyframes transitionRight {
+/* @keyframes transitionRight {
     from { 
         transform: translateX(-20rpx);
     }
@@ -44,4 +44,4 @@
     to { 
         transform: translateX(-50rpx);
     }
-}
+} */

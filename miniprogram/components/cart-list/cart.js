@@ -22,7 +22,7 @@ Component({
   methods: {
     checkboxChange(e) {
       let indexList = e.detail.value;
-      console.log(indexList);
+      // console.log(indexList);
       this.triggerEvent('onCheck',{indexList})
     },
     onReduce(e) {

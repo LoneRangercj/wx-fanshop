@@ -10,7 +10,7 @@
       <button type="" bindtap="searchHandle">搜索</button>
     </view>
   </c-commonbar>
-  <view class="search-input" wx:if="{{flag}}" bindtap="cancelFlagHandle">
+  <view class="search-input" wx:if="{{flag}}" >
     <block wx:for="{{inputSearch}}" wx:for-item="item" wx:key="index" >
       <view class="searchTitle" bindtap="searchResultHandle" data-title="{{item}}">
         {{item}}

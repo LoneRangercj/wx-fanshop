@@ -73,7 +73,7 @@ Page({
     wx.cloud.callFunction({
       name:"swiper",
     }).then(res=>{
-      // console.log(res);
+      //console.log(res);
       this.setData({
         swiperList: res.result.data
       })

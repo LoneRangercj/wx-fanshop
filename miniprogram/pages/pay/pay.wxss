@@ -1,0 +1,91 @@
+.order_manage {
+    width: 100%;
+    padding-top: 40rpx;
+    padding-bottom: 20rpx;
+}
+.order_manage .address_choose {
+    width: 94%;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 260rpx;
+    border-radius: 10rpx;
+}
+.order_manage .address_choose .select_address {
+    text-align: center;
+    color: #FF4400;
+}
+.address_detail {
+    margin-left: 30rpx;
+}
+.pay-img {
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 5rpx;
+}
+.order_detail {
+    width: 400rpx;
+    padding: 0 10rpx;
+}
+.pay-title {
+    height: 70rpx;
+    font-size: 32rpx;
+    vertical-align: top;
+}
+.pay-money {
+    height: 70rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.car-price {
+    color: #f72a1a;
+    font-size: 30rpx;
+}
+.car-count {
+    font-size: 30rpx;
+}
+.good-title {
+    width: 94%;
+    margin: 0 auto;
+    text-align: center;
+    color: #FF4400;
+}
+.order_good {
+    width: 92%;
+    margin: 20rpx auto;
+    height: 200rpx;
+    padding: 10rpx;
+    display: flex;
+    align-items: center;
+    border-radius: 10rpx;
+}
+.order_message .order_position{
+    width: 100%;
+    margin: 0 auto;
+    height: 80rpx;
+    line-height: 80rpx;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cccccc;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+.shopcar-total {
+    color: #f72a1a;
+}
+.shopcar-btn {
+    display: inline-block;
+    width: 180rpx;
+    height: 70rpx;
+    padding: 0rpx 30rpx;
+    background:linear-gradient(to right, #FF4400,#FF7850);
+    color: #fff;
+    font-size: 30rpx;
+    line-height: 70rpx;
+    margin-right: 50rpx;
+    margin-left: 60rpx;
+    border-radius: 40rpx;
+}

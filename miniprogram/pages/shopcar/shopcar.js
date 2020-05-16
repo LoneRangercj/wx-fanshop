@@ -1,5 +1,7 @@
 var list = [];
 let db = wx.cloud.database();
+const app = new getApp();
+var util = require('../../utils/util.js');
 Page({
   /**
    * 页面的初始数据
@@ -112,8 +114,6 @@ Page({
   },
   // 全选功能函数
   checkAll(e) {
-    // console.log(e.detail.allchecked);
-    // console.log(this.data.indexList)
     if(this.data.indexList.length != 0) {
       this.setData({
         indexList: []
@@ -123,7 +123,6 @@ Page({
       allchecked: e.detail.allchecked
     })
     if(this.data.allchecked === false) {
-      // console.log(2222222);
       this.setData({
         indexList:[],
         goodsNumber: 0
@@ -133,7 +132,6 @@ Page({
   },
   // 购物车商品数量
   goodsTotal(e) {
-    // console.log(e.detail.number);
     this.setData({
       goodsNumber: e.detail.number
     })
@@ -172,14 +170,23 @@ Page({
     var num = e.detail.num;
     var total = e.detail.total;
     var _idlist = [];
-    // console.log(total);
     var list = wx.getStorageSync('car');
-    // console.log(list);
+    var time = util.formatTime(new Date());
     this.data.indexList.forEach((item,index,arr)=>{
       _idlist.push(list[item]._id);
       db.collection('order').add({
         data: {
           ...list[item]
+        }
+      })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(console.error)
+      db.collection('orderlist').add({
+        data: {
+          ...list[item],
+          time
         }
       })
       .then(res => {

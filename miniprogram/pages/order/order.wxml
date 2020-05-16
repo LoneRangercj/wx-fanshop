@@ -1,3 +1,17 @@
-<view>
-    订单
+<view class="orderDetail">
+    <view class="orderlist">
+        <block wx:for="{{goodsData}}" wx:for-item="item" wx:key="index">
+            <view class="order_good">
+                <view class="order_time">订单时间:{{item.time}}</view>
+                <image src="{{item.img_url}}" class="pay-img"></image>
+                <view class="order_detail">
+                    <view class="pay-title">{{item.title}}</view>
+                    <view class="pay-money">
+                        <text class="car-price">￥{{item.price}}</text>
+                        <text class="car-count">x{{item.count}}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
 </view>

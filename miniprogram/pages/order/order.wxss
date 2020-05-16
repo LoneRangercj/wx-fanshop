@@ -1,1 +1,40 @@
-/* miniprogram/pages/order/order.wxss */
+.orderlist {
+    width: 96%;
+    margin: 0 auto;
+    font-size: 30rpx;
+}
+.order_good {
+    width: 92%;
+    margin: 20rpx auto;
+    height: 200rpx;
+    padding: 10rpx;
+    display: flex;
+    align-items: center;
+    border-radius: 10rpx;
+}
+.order_time {
+    font-size: 20rpx;
+}
+.order_detail {
+    width: 400rpx;
+    padding: 0 10rpx;
+}
+.pay-title {
+    font-size: 24rpx;
+}
+.pay-img {
+    width: 220rpx;
+    height: 180rpx;
+    border-radius: 5rpx;
+}
+.pay-title {
+    height: 70rpx;
+    font-size: 32rpx;
+    vertical-align: top;
+}
+.pay-money {
+    height: 70rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}

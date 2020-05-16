@@ -70,6 +70,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: #cccccc;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
 }
 .shopcar-total {
     color: #f72a1a;
@@ -83,7 +85,7 @@
     color: #fff;
     font-size: 30rpx;
     line-height: 70rpx;
-    margin-right: 20rpx;
+    margin-right: 50rpx;
     margin-left: 60rpx;
     border-radius: 40rpx;
 }

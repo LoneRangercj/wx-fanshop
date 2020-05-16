@@ -2,8 +2,10 @@ var goodslist = [];
 var addresslists = [];
 var total = 0;
 var num = 0;
+var list = [];
 let db = wx.cloud.database();
 const app = new getApp();
+// var util = require('../../utils/util.js');
 Page({
   /**
    * 页面的初始数据
@@ -20,7 +22,7 @@ Page({
    */
   onLoad: function (options) {
     if(options.idlist) {
-      var list  = JSON.parse(options.idlist);
+      list  = JSON.parse(options.idlist);
       // 获取购买的商品
       this.orderData(list);
       total = options.total;
@@ -76,16 +78,18 @@ Page({
     clearTimeout(timer);
     var that = this;
     let _openid = app.globalData.openid;
-    var consignee = addresslists[0].consignee;
-    var mobile = addresslists[0].mobile;
-    var transportDay = addresslists[0].transportDay;
-    var provinceName = addresslists[0].provinceName;
-    var cityName = addresslists[0].cityName;
-    var countyName = addresslists[0].countyName;
-    var address = addresslists[0].address;
+    // var time = util.formatTime(new Date());
     wx.showLoading({
       title: '付款中',
     })
+    // db.collection('orderlist').add({
+    //   data: {
+    //     time
+    //   }
+    // })
+    // .then(res => {
+    // })
+    // .catch(console.error)
     wx.cloud.callFunction({
       name: "pay",
       data: {
@@ -93,16 +97,6 @@ Page({
         "openid": _openid
       }
     })
-    db.collection('orderlist').add({
-      data: {
-        ...that.data.orderlist,
-        consignee,mobile,transportDay,address: provinceName + cityName + countyName+address,
-      }
-    })
-    .then(res => {
-      // console.log(res) 
-    })
-    .catch(console.error)
     that.data.orderlist.splice(0);
     this.setData({
       orderlist: that.data.orderlist

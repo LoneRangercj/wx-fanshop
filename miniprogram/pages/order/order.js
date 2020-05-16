@@ -1,20 +1,40 @@
-// miniprogram/pages/order/order.js
+let db = wx.cloud.database();
+const app = new getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    goodsData:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 订单管理的处理
+    this.orderlistHandle()
   },
-
+  // 订单管理的处理
+  orderlistHandle() {
+    let _openid = app.globalData.openid;
+    wx.cloud.callFunction({
+      name: "orderlist",
+      data: {
+        "$url": "searchOrderList",
+        "openid": _openid
+      }
+    }).then(res=>{
+      // 对商品进行处理
+      this.getGoodsHandle(res.result.data);
+    })
+  },
+  getGoodsHandle(res) {
+    var result = res;
+    this.setData({
+      goodsData: result
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

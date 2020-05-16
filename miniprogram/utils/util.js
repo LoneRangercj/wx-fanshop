@@ -17,4 +17,3 @@ module.exports = {
   formatTime: formatTime,
   key: '开发者key'
 }
-//备注: 开发者key需要到“实战开发助手”小程序获取，直接配置就可以使用，如果每日次数用完可以申请增加次数

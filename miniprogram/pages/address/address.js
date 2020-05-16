@@ -1,15 +1,23 @@
 let db = wx.cloud.database();
+const app = new getApp();
 Page({
   /**页面的初始数据 */
-  	data: {
-    addressList:[]
+  data: {
+    addressList:[],
+    flag: false, // 判断选择地址的开关
   },
   /*生命周期函数--监听页面加载*/
   onLoad: function (options) {
+    if(options.flag) {
+      this.setData({
+        flag: options.flag
+      })
+    }
     this.addressListHandle();
   },
   // 处理获取地址数据
   addressListHandle() {
+    let openid = app.globalData.openid;
     wx.showLoading({
       title: '加载中...',
     })
@@ -17,6 +25,7 @@ Page({
       name: 'address',
       data:{
         $url:"searchAddress",
+        openid
       }
     }).then(res=>{
       wx.hideLoading();
@@ -47,9 +56,19 @@ Page({
       },
     });
   },
-  /* 删除地址 */
+  /* 挑选地址 */
+  selectAddress: function (e) {
+    // var that = this;
+    var _id = e.target.dataset.id;
+    wx.setStorageSync('address', []);
+    wx.setStorageSync('address', _id);
+    wx.navigateTo({
+      url: `/pages/pay/pay`
+    })
+  },
+  // 删除地址
   delAddress: function (e) {
-    console.log(e.target.dataset.consignee);
+    // console.log(e.target.dataset.consignee);
     var that = this;
     var consignee = e.target.dataset.consignee;
     wx.cloud.callFunction({

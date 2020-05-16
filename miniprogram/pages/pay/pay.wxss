@@ -58,7 +58,6 @@
     display: flex;
     align-items: center;
     border-radius: 10rpx;
-    border: 1rpx solid #cccccc;
 }
 .order_message .order_position{
     width: 100%;
@@ -70,7 +69,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1rpx solid #cccccc;
+    background-color: #cccccc;
 }
 .shopcar-total {
     color: #f72a1a;

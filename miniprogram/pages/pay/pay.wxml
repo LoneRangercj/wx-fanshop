@@ -1,8 +1,14 @@
 <view class="order_manage">
     <view class="address_choose">
-        <view class="select_address">选择发货的地址</view>
-        <view class="address_detail">
+        <view class="select_address" bindtap="selectAddress">选择发货的地址</view>
+        <view class="address_detail" wx:for="{{addresslist}}" wx:for-item="item" wx:key="index">
             展示地址信息
+            <view class="ui-list-item-info">
+                收件人:{{item.consignee}}
+                <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+                手机号:{{item.mobile}}
+            </view>
+            <view class="ui-list-item-address">地址:{{item.address}}</view>
         </view>
     </view>
     <view class="good-title">购买的商品</view>

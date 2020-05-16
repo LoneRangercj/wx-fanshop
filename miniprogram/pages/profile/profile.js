@@ -1,5 +1,5 @@
+const app = new getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -16,13 +16,15 @@ Page({
   },
   // 处理收藏商品的函数
   collectInitData() {
+    let openid = app.globalData.openid;
     wx.showLoading({
       title: '加载中...',
     })
     wx.cloud.callFunction({
       name: 'likeGoods',
       data:{
-        $url:"searchCollectGoods",
+        $url:"searchCollectGoodsNumber",
+        openid
       }
     }).then(res=>{
       wx.hideLoading();

@@ -19,6 +19,17 @@ page{
 .ui-list-item-time{
   margin: 10px 0px;
 }
+.ui-list-item-sele {
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  position: absolute;
+  right: 160rpx;
+  color: #585c64;
+  border: 1rpx solid #FE5D26;
+  border-radius: 10rpx;
+}
 .ui-list-item-del{
   width: 100rpx;
   height: 50rpx;

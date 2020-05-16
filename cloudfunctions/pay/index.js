@@ -18,5 +18,13 @@ exports.main = async (event, context) => {
       })
       .get()
   })
+  app.router('orderGoodsDelete', async(ctx, body) => {
+    let _openid = event.openid;
+    ctx.body = await db.collection('order')
+      .where({
+        _openid
+      })
+      .remove()
+  })
   return app.serve()
 }

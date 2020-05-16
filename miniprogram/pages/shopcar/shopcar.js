@@ -192,17 +192,17 @@ Page({
       wx.showLoading({
         title: '进入商品支付'
       })
-      // console.log(_idlist);
       var idlist = JSON.stringify(_idlist);
       wx.navigateTo({
-        url: '/pages/pay/pay?idlist=' + idlist,
+        url: `/pages/pay/pay?idlist=${idlist}&num=${num}&total=${total}`,
         success: ()=>{
           wx.hideLoading();
         },
         fail: ()=>{
           wx.hideLoading();
         },
-      })   
+      })
+      wx.setStorageSync('car');
     }else {
       wx.showToast({
         title: '没有选择任何商品',

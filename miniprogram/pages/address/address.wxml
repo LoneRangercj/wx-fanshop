@@ -9,6 +9,7 @@
       <view class="ui-list-item-address">地址:{{item.address}}</view>
       <view class="ui-list-item-time">
         <p>收获时间:{{item.transportDay}}</p>
+        <p wx:if="{{flag}}" class="ui-list-item-sele" data-id="{{item._id}}" bindtap="selectAddress">选择</p>
         <p class="ui-list-item-del" data-consignee="{{item.consignee}}" bindtap="delAddress">删除</p>
       </view>
       <view class="separate"></view>

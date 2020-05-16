@@ -14,6 +14,13 @@ exports.main = async (event, context) => {
   app.router('searchCollectGoods', async(ctx, next) => {
     ctx.body =  await db.collection('likeGoods').get()
   })
+  //  获取收藏商品的信息
+   app.router('searchCollectGoodsNumber', async(ctx, next) => {
+    let _openid = event.openid
+    ctx.body =  await db.collection('likeGoods').where({
+      _openid
+    }).get()
+  })
   // return await db.collection('likeGoods').where({
   //   Id: event.Id
   // }).get()
